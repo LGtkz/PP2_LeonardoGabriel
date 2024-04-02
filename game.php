@@ -8,7 +8,7 @@
 </head>
 <body>
     <canvas id="canva" width="1000" height="600">
-        
+
     </canvas>
 </body>
 <script src="js/game.js"></script>

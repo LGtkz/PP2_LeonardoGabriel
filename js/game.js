@@ -52,3 +52,32 @@ function desenha(){
         displayMessage("Game over")
     }
 }
+
+function direcaoCobra(event){
+    console.log(corpoCobra);
+    changeTo = event.key
+    console.log("Direção: ", dir);
+    console.log("Escolha para: ", changeTo);
+    switch (changeTo){
+        case "ArrowDown":
+            if(dir != "ArrowUp"){
+                dir = "ArrowDown"
+            }
+            break;
+        case "ArrowUp":
+            if(dir != "ArrowDown"){
+                dir = "ArrowUp"
+            }
+            break;
+        case "ArrowLeft":
+            if(dir != "ArrowRight"){
+                dir = "ArrowLeft"
+            }
+            break;
+        case "ArrowRight":
+            if(dir!= "ArrowLeft"){
+                dir = "ArrowRight"
+            }
+            break;
+    }
+}

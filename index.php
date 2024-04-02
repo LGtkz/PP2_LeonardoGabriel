@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <a href=""></a>
+            <a href="game.php">A</a>
             <a href=""></a><a href=""></a>
         </nav>
     </header>
