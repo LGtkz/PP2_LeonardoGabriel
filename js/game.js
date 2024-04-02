@@ -57,7 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     setTimeout(() => {
-      
-    })
+      const cells = document.querySelectorAll('grid-cell');
+      cells.forEach(cell => {
+        cell.classList.remove('merged-tile', 'new-tile')
+      });
+
+    }, 300);
+  }
+
+  function colocaAleatorio(){
+    const A = [];
+    for(let i = 0; i < size; i++){
+      for(let j = 0; j < size; j++){
+        if(board[i][j] === 0){
+          A.push({i, j});
+          
+        }
+      }
+    }
   }
 })
