@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if(A.length > 0){
           const randomCell = a[Math.floor(Math.random() * A.length)];
+          board[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
+          const cell = document.querySelectorAll(`[data-row="${randomCell.x}"] [data-col="${randomCell.y}"]`);
         }
       }
     }
