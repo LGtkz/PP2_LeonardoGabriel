@@ -6,8 +6,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    height: 100vh;
+    padding: 0;
+    margin: 0 ;
     background-color: #fafafa;
 }
 
@@ -16,6 +16,12 @@ body{
    height: 320px;
    border: 1px solid #ccc;
    overflow: hidden;
+   scroll-behavior: smooth;
+}
+
+#titulo{
+  font-size: 3rem;
+  text-align: center;
 }
 
 .grid{
@@ -40,6 +46,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    margin-top: 2rem;
 }
 
 .cell[data-value="2"]{
@@ -90,6 +97,33 @@ body{
     background-color: #a9a9a9;
 }
 
+footer{
+  padding: 4rem;
+}
+header{
+  width: 100%;
+  margin-top: 1rem;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+nav > a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 2s;
+}
+nav > a:hover{
+  background-color: #000;
+  border-radius: 20px;
+  color: wheat;
+  transition: all 2s;
+}
 #restart-btn{
     margin-top: 15px;
     padding: 10px 15px;
@@ -120,6 +154,18 @@ body{
 .new-tile{
     animation: appear 0.3s;
 }
+
+footer{
+  margin-top: 4rem;
+  border-top: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+
 
 @keyframes appear {
     from{

@@ -31,11 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
       initializeGame();
   }
 
+  function checkWin() {
+    for (let i = 0; i < size; i++) {
+      for (let j = 0; j < size; j++) {
+        if (board[i][j] === 2048) {
+          gameOverElem.textContent = 'You Win!';
+          gameOverElem.style.display = 'flex';
+        }
+      }
+    }
+  }
   // Function to initialize the game
   function initializeGame() {
       board = [...Array(size)].map(e => Array(size).fill(0));
-      placeRandom();
-      placeRandom();
+      colocaAleatório();
+      colocaAleatório();
       renderBoard();
   }
 
@@ -71,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Function to place a random tile on the board
-  function placeRandom() {
+  function colocaAleatório() {
       const available = [];
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
@@ -114,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       }
       if (hasChanged) {
-          placeRandom();
+          colocaAleatório();
           renderBoard();
           checkGameOver();
       }
@@ -167,4 +177,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.getElementById('restart-btn').addEventListener('click', restartGame);
   initializeGame();
+  board[1][1] = 2048
 });
