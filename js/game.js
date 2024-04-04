@@ -72,12 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if(board[i][j] === 0){
           A.push({i, j});
         }
-        if(A.length > 0){
-          const randomCell = a[Math.floor(Math.random() * A.length)];
-          board[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
-          const cell = document.querySelectorAll(`[data-row="${randomCell.x}"] [data-col="${randomCell.y}"]`);
-        }
+      }
+    }
+    if(A.length > 0){
+      const randomCell = a[Math.floor(Math.random() * A.length)];
+      board[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
+      const cell = document.querySelectorAll(`[data-row="${randomCell.x}"] [data-col="${randomCell.y}"]`);
+      cell.classList.add('new-tile');
+    }
+
+  }
+
+  function move(direction){
+    let escolhido = false;
+    if(direction === 'ArrowUp' || direction === 'ArrowDown'){
+      for(let j = 0; j < size; j++){
+        const coluna  = [...Array(size)].map((_,i) => board[i][j]);
+        const novaColuna = transform(coluna, direction === "ArrowUp");
       }
     }
   }
-})
+});
