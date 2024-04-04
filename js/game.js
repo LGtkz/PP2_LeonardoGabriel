@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
       for(let j = 0; j < size; j++){
         if(board[i][j] === 0){
           A.push({i, j});
-          
+        }
+        if(A.length > 0){
+          const randomCell = a[Math.floor(Math.random() * A.length)];
         }
       }
     }
