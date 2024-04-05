@@ -9,13 +9,9 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html" id="atual">Home</a>
-            <a href="game.html">Game</a>
-            <a href="formulario.html">Formulario</a>
-        </nav>
-    </header>
+<?php
+        include("header.php");
+    ?>
     <main>
         <div class="comoJogar">
             <h1 id="titulo">2048: Deslize, combine e conquiste!</h1>

@@ -9,13 +9,9 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="game.html" id="atual">Game</a>
-            <a href="formulario.html">Formulario</a>
-        </nav>
-    </header>
+    <?php
+        include("header.php");
+    ?>
     <div class="score-container">
         <div>Score : <span id="pontoAtual">0</span></div>
         <div>High Score : <span id="high-score">0</span></div>

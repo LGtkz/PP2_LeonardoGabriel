@@ -11,13 +11,9 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="game.html" >Game</a>
-            <a href="formulario.html" id="atual">Formulario</a>
-        </nav>
-    </header>
+<?php
+    include("header.php");
+    ?>
     <h1>Atendimento ao jogador</h1>
 
     <div class="formulario">

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+        include("header.php");
+    ?>
     <h1>Obrigado por colaborar com nosso projeto e pelo feedback</h1>
     <a href="index.html" id="jogoB">Retornar para pagina principal</a>
 </body>
