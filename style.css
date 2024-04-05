@@ -64,6 +64,7 @@ fieldset > div{
   background-color: black;
   padding: 1rem 2rem 1rem 2rem;
   text-decoration: none;
+
   color: wheat;
   font-size: 2rem;
   border-radius: 12px;
@@ -211,8 +212,35 @@ footer{
   width: 100%;
   padding: 0;
 }
+@media screen and (max-width: 900px) {
+  body > a, p, h1{
+    padding: 2rem;
+  }
+  #jogoB{
+    margin-left: 2rem;
+  }
+  footer{
+    display: flex;
+    flex-direction: column;
+  }
 
+  footer > div{
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid black;
+  }
 
+  .formulario{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .camposLegais{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
 
 @keyframes appear {
     from{

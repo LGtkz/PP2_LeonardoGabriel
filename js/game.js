@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
   const size = 4;
   let board = [];
-  let currentScore = 0;
-  const currentScoreElem = document.getElementById('current-score');
+  let pontoAtual = 0;
+  const pontoAtualElem = document.getElementById('pontoAtual');
   document.addEventListener('keydown', function(event) {
-
+    //Desabilita a fução que as setas de scroll tem no navegador para uso exclusivo do jogo
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
       event.preventDefault();
     }
@@ -17,26 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
   highScoreElem.textContent = highScore;
 
   const gameOverElem = document.getElementById('game-over');
-
+ // Atualiza a pontuação atual e a pontuação mais alta.
   function updateScore(value) {
-      currentScore += value;
-      currentScoreElem.textContent = currentScore;
-      if (currentScore > highScore) {
-          highScore = currentScore;
+      pontoAtual += value;
+      pontoAtualElem.textContent = pontoAtual;
+      if (pontoAtual > highScore) {
+          highScore = pontoAtual;
           highScoreElem.textContent = highScore;
           localStorage.setItem('2048-highScore', highScore);
       }
   }
 
-
-  function restartGame() {
-      currentScore = 0;
-      currentScoreElem.textContent = '0';
+//Recomeça o jogo, limpando a pontuação, o tabuleiro e ocultando a mensagem de fim de jogo.
+  function reiniciaJogo() {
+      pontoAtual = 0;
+      pontoAtualElem.textContent = '0';
       gameOverElem.style.display = 'none';
-      initializeGame();
+      iniciaJogo();
   }
 
-  function checkWin() {
+
+  //Verifica se o jogador atingiu o objetivo do jogo (criar a peça 2048) e exibe a mensagem de vitória.
+  function verificaVitoria() {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         if (board[i][j] === 2048) {
@@ -47,15 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function initializeGame() {
+
+  //Inicializa o tabuleiro, preenchendo com zeros e adicionando duas peças iniciais aleatórias.
+  function iniciaJogo() {
       board = [...Array(size)].map(e => Array(size).fill(0));
       colocaAleatório();
       colocaAleatório();
-      renderBoard();
+      carregaTabela();
   }
 
 
-  function renderBoard() {
+
+  //Atualiza a visualização do tabuleiro no HTML, refletindo os valores atuais das células.
+  function carregaTabela() {
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
               const cell = document.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -85,34 +91,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
   }
 
+
+  //Adiciona uma peça aleatória (2 ou 4) em uma posição vazia do tabuleiro.
   function colocaAleatório() {
-      const available = [];
+      const a = [];
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
               if (board[i][j] === 0) {
-                  available.push({ x: i, y: j });
+                  a.push({ x: i, y: j });
               }
           }
       }
 
-      if (available.length > 0) {
-          const randomCell = available[Math.floor(Math.random() * available.length)];
+      if (a.length > 0) {
+          const randomCell = a[Math.floor(Math.random() * a.length)];
           board[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
           const cell = document.querySelector(`[data-row="${randomCell.x}"][data-col="${randomCell.y}"]`);
           cell.classList.add('new-tile'); 
       }
   }
 
+
+  // Realiza o movimento das peças na direção indicada (cima, baixo, esquerda ou direita), combinando peças iguais e adicionando novas peças aleatoriamente.
   function move(direction) {
-      let hasChanged = false;
+      let escolhido = false;
       if (direction === 'ArrowUp' || direction === 'ArrowDown') {
           for (let j = 0; j < size; j++) {
-              const column = [...Array(size)].map((_, i) => board[i][j]);
-              const newColumn = transform(column, direction === 'ArrowUp');
+              const coluna = [...Array(size)].map((_, i) => board[i][j]);
+              const newcoluna = transform(coluna, direction === 'ArrowUp');
               for (let i = 0; i < size; i++) {
-                  if (board[i][j] !== newColumn[i]) {
-                      hasChanged = true;
-                      board[i][j] = newColumn[i];
+                  if (board[i][j] !== newcoluna[i]) {
+                      escolhido = true;
+                      board[i][j] = newcoluna[i];
                   }
               }
           }
@@ -121,17 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
               const row = board[i];
               const newRow = transform(row, direction === 'ArrowLeft');
               if (row.join(',') !== newRow.join(',')) {
-                  hasChanged = true;
+                  escolhido = true;
                   board[i] = newRow;
               }
           }
       }
-      if (hasChanged) {
+      if (escolhido) {
           colocaAleatório();
-          renderBoard();
+          carregaTabela();
           checkGameOver();
       }
   }
+  //Transforma uma linha ou coluna, movendo as peças para o início ou fim, combinando peças iguais e atualizando a pontuação.
   function transform(line, moveTowardsStart) {
       let newLine = line.filter(cell => cell !== 0);
       if (!moveTowardsStart) {
@@ -152,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return newLine;
   }
+
+  //Verifica se o jogo acabou (quando não há mais movimentos possíveis), exibindo a mensagem de fim de jogo.
   function checkGameOver() {
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
@@ -168,12 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       gameOverElem.style.display = 'flex';
   }
+  //Escuta as teclas pressionadas (setas direcionais) para realizar os movimentos das peças.
   document.addEventListener('keydown', event => {
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
           move(event.key);
       }
   });
-  document.getElementById('restart-btn').addEventListener('click', restartGame);
-  initializeGame();
-  board[1][1] = 2048
+  // no botão de reiniciar: Reinicia o jogo.
+  document.getElementById('restart-btn').addEventListener('click', reiniciaJogo);
+  iniciaJogo();
 });
