@@ -18,6 +18,30 @@ body{
    overflow: hidden;
    scroll-behavior: smooth;
 }
+main{
+  padding: 2rem;
+}
+
+#ob{
+  text-align: center;
+}
+
+.camposLegais{
+  display: flex;
+  gap: 1rem;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+}
+
+fieldset > div{
+  padding: 1rem;
+}
 
 #titulo{
   font-size: 3rem;

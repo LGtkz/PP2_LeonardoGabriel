@@ -4,7 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let board = [];
   let currentScore = 0;
   const currentScoreElem = document.getElementById('current-score');
-
+  document.addEventListener('keydown', function(event) {
+    // Verificar se a tecla pressionada é uma seta para cima, baixo, esquerda ou direita
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+      event.preventDefault();
+    }
+  });
+  
   // Get the high score from local storage or set it to 0 if not found
   let highScore = localStorage.getItem('2048-highScore') || 0;
   const highScoreElem = document.getElementById('high-score');
