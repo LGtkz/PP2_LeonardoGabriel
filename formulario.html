@@ -72,25 +72,30 @@
             </div>
             <div class="textArea">
                 <textarea name="textarea" id="txA" cols="30" rows="10" placeholder="Digite aqui"></textarea>
+                <span id="txSpan"></span>
             </div>
             <div class="arq">
                 <input type="file" name="" id="">
             </div>
             
-            <button id="btn">Enviar</button>
+            <button id="btn" type="button">Enviar</button>
 
             <div class="modal" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <h5 class="modal-title">Informações</h5>
                     </div>
-                    <div class="modal-body">
-                      <p>Modal body text goes here.</p>
+                    <div class="modal-body" style="display: flex; flex-direction: column;">
+                        <span id="nomeModal"></span>
+                        <span id="idadeModal"></span>
+                        <span id="emailModal"></span>
+                        <span id="sexoModal"></span>
+                        <span id="contatoModal"></span>
+                        <span id="textModal"></span>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Limpar</button>
+                      <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" id="limpa">Limpar</button>
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Editar</button>
                       <button type="button" class="btn btn-primary">Enviar</button>
                     </div>
