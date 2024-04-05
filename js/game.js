@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //Adiciona uma peça aleatória (2 ou 4) em uma posição vazia do tabuleiro.
-  function colocaAleatório() {
+  function colocaAleatorio() {
       const a = [];
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       }
       if (escolhido) {
-          colocaAleatório();
+          colocaAleatorio();
           carregaTabela();
           checkGameOver();
       }
@@ -174,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //Inicializa o tabuleiro, preenchendo com zeros e adicionando duas peças iniciais aleatórias.
     function iniciaJogo() {
         board = [...Array(size)].map(e => Array(size).fill(0));
-        colocaAleatório();
-        colocaAleatório();
+        colocaAleatorio();
+        colocaAleatorio();
         carregaTabela();
     }
   //Escuta as teclas pressionadas (setas direcionais) para realizar os movimentos das peças.
