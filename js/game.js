@@ -49,17 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-  //Inicializa o tabuleiro, preenchendo com zeros e adicionando duas peças iniciais aleatórias.
-  function iniciaJogo() {
-      board = [...Array(size)].map(e => Array(size).fill(0));
-      colocaAleatório();
-      colocaAleatório();
-      carregaTabela();
-  }
-
-
-
   //Atualiza a visualização do tabuleiro no HTML, refletindo os valores atuais das células.
   function carregaTabela() {
       for (let i = 0; i < size; i++) {
@@ -181,6 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       gameOverElem.style.display = 'flex';
   }
+
+    //Inicializa o tabuleiro, preenchendo com zeros e adicionando duas peças iniciais aleatórias.
+    function iniciaJogo() {
+        board = [...Array(size)].map(e => Array(size).fill(0));
+        colocaAleatório();
+        colocaAleatório();
+        carregaTabela();
+    }
   //Escuta as teclas pressionadas (setas direcionais) para realizar os movimentos das peças.
   document.addEventListener('keydown', event => {
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
