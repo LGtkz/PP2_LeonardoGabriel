@@ -107,6 +107,12 @@ btn.onclick = (e) => {
         textArea.style.border = "green solid 1px"
         txtvalido = true;
     }
+    if (!duvida.checked && !reclamacao.checked && !criticaConstrutiva.checked && !encontreiBug.checked){
+        alerta.style.display = "block";
+    }
+    else{
+        alerta.style.display = "none";
+    }
     if (nomevalido && emailvalido && idadevalido && txtvalido){
             valido = true;
         }
@@ -154,4 +160,17 @@ limpa.onclick = () => {
     sexoModal.innerHTML = "Sexo: "
     contatoModal.innerHTML = "Escolhas: "
     textModal.innerHTML = "Texto: "
-}
+    nome.value = "";
+    email.value = "";
+    idade.value = "";
+    textArea.value = "";
+    masc.value = "";
+    fem.value = "";
+    spanNome.style.display = "none";
+    spanEmail.style.display = "none";
+    spanIdade.style.display = "none";
+  
+    nome.style.border = "";
+    email.style.border = "";
+    idade.style.border = "";
+  }

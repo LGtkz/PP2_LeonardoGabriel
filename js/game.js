@@ -5,20 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentScore = 0;
   const currentScoreElem = document.getElementById('current-score');
   document.addEventListener('keydown', function(event) {
-    // Verificar se a tecla pressionada é uma seta para cima, baixo, esquerda ou direita
+
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
       event.preventDefault();
     }
   });
   
-  // Get the high score from local storage or set it to 0 if not found
+
   let highScore = localStorage.getItem('2048-highScore') || 0;
   const highScoreElem = document.getElementById('high-score');
   highScoreElem.textContent = highScore;
 
   const gameOverElem = document.getElementById('game-over');
 
-  // Function to update the score
   function updateScore(value) {
       currentScore += value;
       currentScoreElem.textContent = currentScore;
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
-  // Function to restart the game
+
   function restartGame() {
       currentScore = 0;
       currentScoreElem.textContent = '0';
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  // Function to initialize the game
+
   function initializeGame() {
       board = [...Array(size)].map(e => Array(size).fill(0));
       colocaAleatório();
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderBoard();
   }
 
-  // Function to render the game board on the UI
+
   function renderBoard() {
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (currentValue !== 0) {
                   cell.dataset.value = currentValue;
                   cell.textContent = currentValue;
-                  // Animation handling
+
                   if (currentValue !== parseInt(prevValue) && !cell.classList.contains('new-tile')) {
                       cell.classList.add('merged-tile');
                   }
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       }
 
-      // Cleanup animation classes
+
       setTimeout(() => {
           const cells = document.querySelectorAll('.grid-cell');
           cells.forEach(cell => {
@@ -86,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
   }
 
-  // Function to place a random tile on the board
   function colocaAleatório() {
       const available = [];
       for (let i = 0; i < size; i++) {
@@ -101,11 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const randomCell = available[Math.floor(Math.random() * available.length)];
           board[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
           const cell = document.querySelector(`[data-row="${randomCell.x}"][data-col="${randomCell.y}"]`);
-          cell.classList.add('new-tile'); // Animation for new tiles
+          cell.classList.add('new-tile'); 
       }
   }
 
-  // Function to move the tiles based on arrow key input
   function move(direction) {
       let hasChanged = false;
       if (direction === 'ArrowUp' || direction === 'ArrowDown') {
@@ -135,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
           checkGameOver();
       }
   }
-
-  // Function to transform a line (row or column) based on move direction
   function transform(line, moveTowardsStart) {
       let newLine = line.filter(cell => cell !== 0);
       if (!moveTowardsStart) {
@@ -145,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 0; i < newLine.length - 1; i++) {
           if (newLine[i] === newLine[i + 1]) {
               newLine[i] *= 2;
-              updateScore(newLine[i]); // Update score when tiles merged
+              updateScore(newLine[i]); 
               newLine.splice(i + 1, 1);
           }
       }
@@ -157,25 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return newLine;
   }
-  // Function to check if the game is over
   function checkGameOver() {
       for (let i = 0; i < size; i++) {
           for (let j = 0; j < size; j++) {
               if (board[i][j] === 0) {
-                  return; // There is an empty cell, so game not over
+                  return; 
               }
               if (j < size - 1 && board[i][j] === board[i][j + 1]) {
-                  return; // There are horizontally adjacent equal cells, so a move is possible
+                  return;
               }
               if (i < size - 1 && board[i][j] === board[i + 1][j]) {
-                  return; // There are vertically adjacent equal cells, so a move is possible
+                  return;
               }
           }
       }
-      // If we reach here, no moves are possible
       gameOverElem.style.display = 'flex';
   }
-  // Event listeners
   document.addEventListener('keydown', event => {
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
           move(event.key);
