@@ -13,4 +13,5 @@
     <h1>Obrigado por colaborar com nosso projeto e pelo feedback</h1>
     <a href="index.php" id="jogoB">Retornar para pagina principal</a>
 </body>
+<?php  include("footer.php"); ?>
 </html>

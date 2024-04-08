@@ -42,24 +42,8 @@
         Game Over!
         <button id="restart-btn">Restart Game</button>
     </div>
-
+        <?php  include("footer.php"); ?>
     <script src="js/game.js"></script>
-
-    <footer>
-        <div class="todos">
-            <p>Todos os direitos reservados©</p>
-        </div>
-        <div class="contato">
-            <p>Contatos</p>
-            <p>leobarrigazap@gmail.com</p>
-            <p>hannyzinhapititinha@gmail.com</p>
-        </div>
-        <div class="local">
-            <p>Avenida Rua dos bobos</p>
-            <p>Numero: 0</p>
-            <p>Centro</p>
-        </div>
-    </footer>
 </body>
 
 </html>
