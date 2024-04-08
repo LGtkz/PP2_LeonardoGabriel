@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-
   let highScore = localStorage.getItem('2048-highScore') || 0;
   const highScoreElem = document.getElementById('high-score');
   highScoreElem.textContent = highScore;
