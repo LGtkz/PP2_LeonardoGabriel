@@ -1,3 +1,24 @@
+<?php 
+class form{
+    private $name;
+    private $email;
+    private $idade;
+    private $sexo;
+    private $typeContact;
+    private $textArea;
+
+    function __construct($name, $email, $idade, $sexo, $typeContact, $textArea)
+    {
+        $this -> name = $name;
+        $this -> email = $email;
+        $this -> idade = $idade;
+        $this -> sexo = $sexo;
+        $this -> typeContact = $typeContact;
+        $this -> textArea = $textArea;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +39,7 @@
 
     <div class="formulario">
         <p for="obrigatorio" id="ob">Campos com * são obrigatórios</p>
-        <form action="obrigado.html" method="get">
+        <form action="obrigado.php" method="post">
             <fieldset>
                 <div class="camposLegais">
                     <div>
