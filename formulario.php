@@ -44,7 +44,7 @@ class form{
                 <div class="camposLegais">
                     <div>
                         <label for="nome">Nome*</label>
-                        <input type="text" id="nome" placeholder="Nome completo">
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo">
                         <span id="spanNome"></span>
                     </div>
                     <div>
@@ -120,9 +120,12 @@ class form{
                       </div>
                     </div>
                   </div>
-    
+                  <?php
+                    $nome = isset($_POST["nome"]) ? $_POST["nome"] : "";
+                    $email = isset($_POST["email"]) ? $_POST["email"] : "";
+                    echo "Sr. $nome, seu e-mail é $email";
+                ?>
         </form>
-
 
 
         </fieldset>
