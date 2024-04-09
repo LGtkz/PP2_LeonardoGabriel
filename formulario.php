@@ -1,24 +1,3 @@
-<?php 
-class form{
-    private $name;
-    private $email;
-    private $idade;
-    private $sexo;
-    private $typeContact;
-    private $textArea;
-
-    function __construct($name, $email, $idade, $sexo, $typeContact, $textArea)
-    {
-        $this -> name = $name;
-        $this -> email = $email;
-        $this -> idade = $idade;
-        $this -> sexo = $sexo;
-        $this -> typeContact = $typeContact;
-        $this -> textArea = $textArea;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +15,6 @@ class form{
     include("header.php");
     ?>
     <h1>Atendimento ao jogador</h1>
-
     <div class="formulario">
         <p for="obrigatorio" id="ob">Campos com * são obrigatórios</p>
         <form action="obrigado.php" method="post">
@@ -120,19 +98,9 @@ class form{
                       </div>
                     </div>
                   </div>
-                  <?php
-                    $nome = isset($_POST["nome"]) ? $_POST["nome"] : "";
-                    $email = isset($_POST["email"]) ? $_POST["email"] : "";
-                    echo "Sr. $nome, seu e-mail é $email";
-                ?>
         </form>
-
-
         </fieldset>
     </div>
-
-
-
     <?php  include("footer.php"); ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

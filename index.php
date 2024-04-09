@@ -41,7 +41,15 @@
             <p>O jogo termina quando você alcançar o bloco 2048 ou quando não houver mais jogadas válidas.</p>
             <a href="game.html" id="jogoB">Vamos jogar</a>
         </div>
-
+        <div class="comentario">
+            <h1>Deseja fazer algum comentario?</h1>
+            <div class="areaComment">
+                <label for="name">Insira seu nome</label>
+                <input type="text">
+                <label for="comment">Comente</label>
+                <textarea name="comment" id="comentarios" cols="30" rows="10"></textarea>
+            </div>
+        </div>
     </main>
     <?php  include("footer.php"); ?>
 </body>
