@@ -19,12 +19,11 @@ $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':idade', $idade);
 $stmt->bindParam(':sexo', $sexo);
-$stmt->bindParam(':duvidas', $tipoContato); // Corrigindo o nome do parâmetro
+$stmt->bindParam(':duvidas', $tipoContato);
 $stmt->bindParam(':mensagem', $mensagem);
 
 // Executando a query
 $stmt->execute();
-echo "Registro inserido com sucesso!";
 $conexao = null;
 
 header("Location: index.php");

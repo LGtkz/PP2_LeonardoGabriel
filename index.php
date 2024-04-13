@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -9,8 +11,8 @@
 </head>
 
 <body>
-<?php
-        include("header.php");
+    <?php
+    include("header.php");
     ?>
     <main>
         <div class="comoJogar">
@@ -43,20 +45,41 @@
         </div>
         <div class="coment">
             <h1>Deseja fazer algum comentario?</h1>
-            <div class="areaComment">
-                <div>
-                <label for="name">Insira seu nome</label>
-                <input id="name" type="text" placeholder="Digite seu nome">
+            <form action="comentario.php" method="get">
+                <div class="areaComment">
+                    <div>
+                        <label for="name">Insira seu nome</label>
+                        <input name="user" id="name" type="text" placeholder="Digite seu nome">
+                    </div>
+                    <div>
+                        <label for="comment">Comente</label>
+                        <textarea name="comment" id="comentarios" cols="30" rows="10" placeholder="Digite aqui seu comentario"></textarea>
+                    </div>
+                    <button>Enviar</button>
                 </div>
-                <div>
-                <label for="comment">Comente</label>
-                <textarea name="comment" id="comentarios" cols="30" rows="10" placeholder="Digite aqui seu comentario"></textarea>
-                </div>
-                <button>Enviar</button>
-            </div>
+            </form>
         </div>
+        <?php
+        include("conexao.php");
+        // Consulta SQL para recuperar os comentários
+        $sql = "SELECT * FROM comentarios";
+        $stmt = $conexao->query($sql);
+
+        // Verifica se existem comentários
+        if ($stmt->rowCount() > 0) {
+            // Exibe os comentários
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo '<div class="blocoComentario">';
+                echo "<h3>Autor: " . $row['username'] . "</h3>";
+                echo "<p>Comentário: " . $row['comentario'] . "</p>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>Nenhum comentário encontrado.</p>";
+        }
+        ?>
     </main>
-    <?php  include("footer.php"); ?>
+    <?php include("footer.php"); ?>
 </body>
 
 </html>

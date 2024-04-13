@@ -11,6 +11,17 @@ body{
     background-color: #fafafa;
 }
 
+.blocoComentario{
+  border: 1px solid black;
+  padding: 2rem;
+}
+.blocoComentario > div{
+  padding: 1rem;
+  width: 70%;
+  text-align: left;
+
+}
+
 .coment{
   width: 70%;
 }
