@@ -68,7 +68,7 @@ btn.onclick = (e) => {
         emailvalido = true;
     }
     if (!masc.checked && !fem.checked) {
-        sexoSpan.innerHTML = "Selecione uma das opções"
+        sexoSpan.innerHTML = "Selecione uma das opçôes"
         sexoSpan.style.display = "block"
         sexoSpan.style.color = "red"
         sexovalido = false;
@@ -113,7 +113,7 @@ btn.onclick = (e) => {
     else{
         alerta.style.display = "none";
     }
-    if (nomevalido && emailvalido && idadevalido && txtvalido){
+    if (nomevalido && emailvalido && idadevalido && txtvalido &&sexovalido){
             valido = true;
         }
         if (!valido) {

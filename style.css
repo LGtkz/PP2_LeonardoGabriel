@@ -11,16 +11,22 @@ body{
     background-color: #fafafa;
 }
 
+.coment{
+  width: 70%;
+}
+.coment > label{
+  font-size: 4rem;
+}
+.coment > div > div{
+  display: flex;
+  flex-direction: column;
+}
+
 .ativa{
   background-color: #000;
   color: wheat;
   border-radius: 12px;
 }
-
-.comentario{
-  background-color: #000;
-}
-
 .game-container{
    width: 320px;
    height: 320px;

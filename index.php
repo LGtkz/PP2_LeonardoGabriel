@@ -39,15 +39,20 @@
             <p>Ao mover os blocos, eles se combinam se tiverem o mesmo número.</p>
             <p>A combinação de dois blocos com o mesmo número resulta em um bloco com o dobro do valor.</p>
             <p>O jogo termina quando você alcançar o bloco 2048 ou quando não houver mais jogadas válidas.</p>
-            <a href="game.html" id="jogoB">Vamos jogar</a>
+            <a href="game.php" id="jogoB">Vamos jogar</a>
         </div>
-        <div class="comentario">
+        <div class="coment">
             <h1>Deseja fazer algum comentario?</h1>
             <div class="areaComment">
+                <div>
                 <label for="name">Insira seu nome</label>
-                <input type="text">
+                <input id="name" type="text" placeholder="Digite seu nome">
+                </div>
+                <div>
                 <label for="comment">Comente</label>
-                <textarea name="comment" id="comentarios" cols="30" rows="10"></textarea>
+                <textarea name="comment" id="comentarios" cols="30" rows="10" placeholder="Digite aqui seu comentario"></textarea>
+                </div>
+                <button>Enviar</button>
             </div>
         </div>
     </main>

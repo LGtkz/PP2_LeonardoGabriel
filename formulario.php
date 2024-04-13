@@ -17,7 +17,7 @@
     <h1>Atendimento ao jogador</h1>
     <div class="formulario">
         <p for="obrigatorio" id="ob">Campos com * são obrigatórios</p>
-        <form action="obrigado.php" method="post">
+        <form action="enviaBanco.php" method="post">
             <fieldset>
                 <div class="camposLegais">
                     <div>
@@ -27,18 +27,18 @@
                     </div>
                     <div>
                         <label for="email">E-mail*</label>
-                        <input type="email" name="" id="email" placeholder="email">
+                        <input type="email" name="email" id="email" placeholder="email">
                         <span id="spanEmail"></span>
                     </div>
                     <div>
                         <label for="idade">Idade*</label>
-                        <input type="number" id="idade" placeholder="Digite sua idade">
+                        <input type="number" name="idade" id="idade" placeholder="Digite sua idade">
                         <span id="spanIdade"></span>
                     </div>
                 </div>
                 <div>
                     <label for="sexo">Sexo:*</label>
-                    <input type="radio" id="masculino" name="sexo" value="masculino" checked>
+                    <input type="radio" id="masculino" name="sexo" value="masculino">
                     <label for="masculino">Masculino</label>
                     <input type="radio" id="feminino" name="sexo" value="feminino">
                     <label for="feminino">Feminino</label>
@@ -69,9 +69,6 @@
                 <div class="textArea">
                     <textarea name="textarea" id="txA" cols="30" rows="10" placeholder="Digite aqui"></textarea>
                     <span id="txSpan"></span>
-                </div>
-                <div class="arq">
-                    <input type="file" name="" id="">
                 </div>
                 
                 <button id="btn" type="button">Enviar</button>
