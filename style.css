@@ -275,3 +275,16 @@ footer{
         transform: scale(1);
     }
 }
+
+@media screen and (max-width: 600px) {
+  .blocoComentario > div {
+      width: 90%; /* Reduz a largura dos comentários em telas menores */
+  }
+  .coment {
+      width: 90%; /* Reduz a largura dos campos de comentário em telas menores */
+  }
+  .game-container {
+      width: 100%; /* Faz o contêiner do jogo ocupar toda a largura em telas menores */
+      height: auto; /* Ajusta a altura automaticamente para evitar a rolagem horizontal */
+  }
+}

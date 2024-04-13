@@ -6,7 +6,7 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $idade = $_POST['idade'];
 $sexo = $_POST['sexo']; 
-$tipoContato = isset($_POST['tipo']) ? $_POST['tipo'] : ""; // Convertendo array para string, se necessário
+$tipoContato = isset($_POST['tipo']); // Convertendo array para string, se necessário
 $mensagem = $_POST['textarea'];
 
 // Consulta SQL corrigida
