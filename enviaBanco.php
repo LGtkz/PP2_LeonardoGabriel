@@ -2,8 +2,9 @@
 include("conexao.php");
 
 // Recebendo os valores dos campos do formulário
-$nome = $_POST['nome'];
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 $email = $_POST['email'];
+$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $idade = $_POST['idade'];
 $sexo = $_POST['sexo'];
 $tipoContato = $_POST['tipo'] ?? []; 
