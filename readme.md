@@ -4,4 +4,3 @@
 # Integrantes Leonardo Gabriel, Hanny Emily
 
 ### [LINK DO SITE HOSPEDADO](https://pp2leonardogabrielhannyemilly.000webhostapp.com/game.php)
-# Tabelas Criadas
