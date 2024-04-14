@@ -47,19 +47,19 @@
                 <div>
                     <label for="tipo">Selecione o tipo de contato:</label>
                     <div>
-                        <input type="checkbox" id="duvida" name="tipo" value="duvida">
+                        <input type="checkbox" id="duvida" name="tipo[]" value="duvida">
                         <label for="duvida">Dúvida</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="reclamacao" name="tipo" value="reclamacao">
+                        <input type="checkbox" id="reclamacao" name="tipo[]" value="reclamacao">
                         <label for="reclamacao">Reclamação</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="critica-construtiva" name="tipo" value="critica-construtiva">
+                        <input type="checkbox" id="critica-construtiva" name="tipo[]" value="critica-construtiva">
                         <label for="critica-construtiva">Crítica construtiva</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="encontrei-bug" name="tipo" value="encontrei-bug">
+                        <input type="checkbox" id="encontrei-bug" name="tipo[]" value="encontrei-bug">
                         <label for="critica-construtiva">Encontrei um bug</label>
                     </div>
                     <div class="alert alert-warning" role="alert" id="alerta">

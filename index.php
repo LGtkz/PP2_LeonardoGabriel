@@ -55,7 +55,7 @@
                         <label for="comment">Comente</label>
                         <textarea name="comment" id="comentarios" cols="30" rows="10" placeholder="Digite aqui seu comentario"></textarea>
                     </div>
-                    <button>Enviar</button>
+                    <button type="submit">Enviar</button>
                 </div>
             </form>
         </div>
@@ -79,6 +79,7 @@
         }
         ?>
     </main>
+    <script src="js/validaComment.js"></script>
     <?php include("footer.php"); ?>
 </body>
 

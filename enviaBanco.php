@@ -5,8 +5,9 @@ include("conexao.php");
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $idade = $_POST['idade'];
-$sexo = $_POST['sexo']; 
-$tipoContato = isset($_POST['tipo']); // Convertendo array para string, se necessário
+$sexo = $_POST['sexo'];
+$tipoContato = $_POST['tipo'] ?? []; 
+$tipoContato = implode(', ', $tipoContato);
 $mensagem = $_POST['textarea'];
 
 // Consulta SQL corrigida

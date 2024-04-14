@@ -288,3 +288,82 @@ footer{
       height: auto; /* Ajusta a altura automaticamente para evitar a rolagem horizontal */
   }
 }
+
+/* Estilos padrão */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para telas menores (como smartphones) */
+@media only screen and (max-width: 600px) {
+  /* Ajuste do tamanho da fonte */
+  body {
+      font-size: 14px;
+  }
+  
+  /* Ajuste de layout para os elementos principais */
+  #titulo {
+      font-size: 24px;
+  }
+  
+  /* Ajuste para imagens responsivas */
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Estilos específicos para elementos dentro da classe comoJogar */
+  .comoJogar {
+      padding: 20px;
+  }
+}
+
+/* Estilos para telas maiores (como desktops) */
+@media only screen and (min-width: 601px) {
+  /* Ajuste do tamanho da fonte */
+  body {
+      font-size: 16px;
+  }
+  
+  /* Ajuste de layout para os elementos principais */
+  #titulo {
+      font-size: 36px;
+  }
+  
+  /* Ajuste para imagens responsivas */
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Estilos específicos para elementos dentro da classe comoJogar */
+  .comoJogar {
+      padding: 40px;
+  }
+}
+
+/* Estilos para tela extra larga (por exemplo, grandes desktops) */
+@media only screen and (min-width: 1200px) {
+  /* Ajuste do tamanho da fonte */
+  body {
+      font-size: 18px;
+  }
+  
+  /* Ajuste de layout para os elementos principais */
+  #titulo {
+      font-size: 48px;
+  }
+  
+  /* Ajuste para imagens responsivas */
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Estilos específicos para elementos dentro da classe comoJogar */
+  .comoJogar {
+      padding: 60px;
+  }
+}

@@ -3,5 +3,5 @@
 ### Jogo: 2048
 # Integrantes Leonardo Gabriel, Hanny Emily
 
-## link do site
-### https://lgtkz.github.io/PP2_LeonardoGabriel_HannyEmilly/index.html
+### [LINK DO SITE HOSPEDADO](https://pp2leonardogabrielhannyemilly.000webhostapp.com/game.php)
+# Tabelas Criadas
