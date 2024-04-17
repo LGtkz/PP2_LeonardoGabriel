@@ -8,8 +8,6 @@
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':comentario', $comentario);
             $stmt->execute();
-
-            $sql = 'DELETE FROM comentarios(username, comentario) WHERE nome = "teste"';
             $conexao = null;
             header("Location: index.php");
 exit;

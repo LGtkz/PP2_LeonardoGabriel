@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
-
   // Realiza o movimento das peças na direção indicada (cima, baixo, esquerda ou direita), combinando peças iguais e adicionando novas peças aleatoriamente.
   function move(direction) {
       let escolhido = false;

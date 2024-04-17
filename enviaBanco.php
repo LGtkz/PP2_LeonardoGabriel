@@ -11,7 +11,6 @@ $tipoContato = $_POST['tipo'] ?? [];
 $tipoContato = implode(', ', $tipoContato);
 $mensagem = $_POST['textarea'];
 
-// Consulta SQL corrigida
 $sql = "INSERT INTO formulario (nome, email, idade, sexo, duvidas, textArea)
         VALUES (:nome, :email, :idade, :sexo, :duvidas, :mensagem)";
 
